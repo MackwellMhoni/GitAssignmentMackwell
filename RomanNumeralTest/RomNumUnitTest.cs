@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace RomanNumeralTest
 {
     public class RomNumUnitTest
@@ -6,10 +8,13 @@ namespace RomanNumeralTest
         public void Test_Roman_Numeral_Conversion()
         {
             var rNum = new RomNum();
+            int input = 1994;
 
-            rNum.Conv(0);
+            rNum.Conv(input);
 
-            Assert.Equal(0, rNum.Results());
+            Assert.Equal("MCMXCIX", rNum.Results());
         }
+
     }
 }
+
