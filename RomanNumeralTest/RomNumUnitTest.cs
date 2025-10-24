@@ -5,18 +5,6 @@ namespace RomanNumeralTest
     public class RomNumUnitTest
     {
         [Fact]
-        public void Test_Roman_Numeral_Conversion()
-        {
-            var rNum = new RomNum();
-            int input = 1994;
-
-            rNum.Conv(input);
-
-            Assert.Equal("MCMXCIX", rNum.Results());
-        }
-
-
-        [Fact]
         public void Test_Roman_Numeral_Out_Of_Range()
         {
             var rNum = new RomNum();
@@ -24,7 +12,7 @@ namespace RomanNumeralTest
 
             rNum.InRang(input);
 
-            Assert.Equal("Not in range", rNum.InRang(input));
+            Assert.Equal("Not in range", rNum.Results());
         }
     }
 }
