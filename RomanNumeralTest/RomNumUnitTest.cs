@@ -10,9 +10,19 @@ namespace RomanNumeralTest
             var rNum = new RomNum();
             int input = 3050;
 
-            rNum.InRang(input);
+            Assert.Equal("Not in range", rNum.InRang(input));
+        }
 
-            Assert.Equal("Not in range", rNum.Results());
+
+        [Fact]
+        public void Test_Roman_Numeral_Conversion()
+        {
+            var rNum = new RomNum();
+            int input = 1994;
+
+            rNum.Conv(input);
+
+            Assert.Equal("MCMXCIX", rNum.Conv(input));
         }
     }
 }
