@@ -24,6 +24,17 @@ namespace RomanNumeralTest
 
             Assert.Equal("L", rNum.Conv(input));
         }
+
+        [Fact]
+        public void Test_Roman_Numeral_Conversion_Construction()
+        {
+            var rNum = new RomNum();
+            int input = 900;
+
+            rNum.Subtract(input);
+
+            Assert.Equal("VIII", rNum.Subtract(input));
+        }
     }
 }
 

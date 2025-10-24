@@ -51,6 +51,11 @@ public class RomNum
 
         return result.ToString();
     }
+
+    public string Subtract(int num)
+    {
+        return "";
+    }
 }
 
 
