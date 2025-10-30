@@ -136,6 +136,49 @@ public class RomNum
         return result.ToString();
 
     }
+
+    public string ConvertToRoman(int input)
+    {
+        var romanNumerals = new[]
+         {
+            new { Value = 1000, Symbol = "M" },
+            new { Value = 900, Symbol = "CM" },
+            new { Value = 500,  Symbol = "D" },
+            new { Value = 400, Symbol = "CD" },
+            new { Value = 100,  Symbol = "C" },
+            new { Value = 90, Symbol = "XC" },
+            new { Value = 50,   Symbol = "L" },
+            new { Value = 40, Symbol = "XL" },
+            new { Value = 10,   Symbol = "X" },
+            new { Value = 90, Symbol = "IX" },
+            new { Value = 5,    Symbol = "V" },
+            new { Value = 4, Symbol = "IV" },
+            new { Value = 1,    Symbol = "I" }
+        };
+
+        var result = new StringBuilder();
+        int remainingNum = num;
+
+        foreach (var pair in romanNumerals)
+        {
+            while (remainingNum >= pair.Value)
+            {
+                result.Append(pair.Symbol);
+                remainingNum -= pair.Value;
+            }
+        }
+
+        string romanNumeral = result.ToString();
+        string reversed = new string(romanNumeral.Reverse().ToArray());
+        if(reversed != romanNumeral)
+        {
+            return "Correct";
+        }
+        else
+        {
+            return "Symbols in the wrong order";
+        }
+    }
 }
 
 

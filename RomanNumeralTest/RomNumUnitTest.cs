@@ -31,6 +31,15 @@ namespace RomanNumeralTest
         }
 
         [Fact]
+        public void Test_Roman_Numeral_Negative3000()
+        {
+            var rNum = new RomNum();
+            int input = -3000;
+
+            Assert.Equal("Not in range", rNum.InRang(input));
+        }
+
+        [Fact]
         public void Test_Roman_Numeral_Random_ConverT_1()
         {
             var rNum = new RomNum();
@@ -50,6 +59,17 @@ namespace RomanNumeralTest
             rNum.Conv(input);
 
             Assert.Equal("L", rNum.Conv(input));
+        }
+
+        [Fact]
+        public void Test_Roman_Numeral_1000()
+        {
+            var rNum = new RomNum();
+            int input = 1000;
+
+            rNum.Conv(input);
+
+            Assert.Equal("M", rNum.Conv(input));
         }
 
         [Fact]
@@ -74,6 +94,18 @@ namespace RomanNumeralTest
             Assert.Equal("MMM", rNum.Conv(input));
         }
 
+        [Fact]
+        public void Test_Roman_Numeral_RND_number()
+        {
+            var rNum = new RomNum();
+            int input = 1984;
+
+            rNum.Conv(input);
+
+            Assert.Equal("MCMLXXXIV", rNum.Conv(input));
+        }
+
+
 
         [Fact]
         public void Test_Roman_Repition()
@@ -93,6 +125,15 @@ namespace RomanNumeralTest
             rNum.Conv(input);
 
             Assert.Equal("CM", rNum.Subtract(input));
+        }
+
+        [Fact]
+        public void Test_Roman_Numeral_Reverse()
+        {
+            var rNum = new RomNum();
+            int input = 1984;
+
+            Assert.Equal("Symbols in the wrong order", rNum.ConvertToRoman(input));
         }
     }
 }
