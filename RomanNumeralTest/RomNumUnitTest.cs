@@ -22,6 +22,15 @@ namespace RomanNumeralTest
         }
 
         [Fact]
+        public void Test_Roman_Numeral_Negative()
+        {
+            var rNum = new RomNum();
+            int input = -1;
+
+            Assert.Equal("Not in range", rNum.InRang(input));
+        }
+
+        [Fact]
         public void Test_Roman_Numeral_Random_ConverT_1()
         {
             var rNum = new RomNum();
@@ -72,7 +81,7 @@ namespace RomanNumeralTest
             var rNum = new RomNum();
             int input = 4;
             rNum.Conv(input);
-            Assert.Equal("IIII", rNum.Repition(input));
+            Assert.Equal("Error: More than 3 repetitions", rNum.Repition(input));
         }
 
         [Fact]

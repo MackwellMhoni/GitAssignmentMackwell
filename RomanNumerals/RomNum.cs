@@ -77,7 +77,7 @@ public class RomNum
         };
 
         var result = new StringBuilder();
-        int remainingNum = num;
+        int remainingNum = number;
 
         foreach (var pair in romanNumerals)
         {
@@ -86,7 +86,7 @@ public class RomNum
                 string repeat = string.Concat(Enumerable.Repeat(pair.Symbol, 4));
                 if(repeat.Contains(pair.Symbol + pair.Symbol + pair.Symbol + pair.Symbol))
                 {
-                    throw new InvalidOperationException("Roman numeral repetition exceeded for symbol: " + pair.Symbol);
+                    return "Error: More than 3 repetitions";
                 }
                 else
                 {
